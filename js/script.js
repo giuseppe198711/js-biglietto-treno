@@ -1,6 +1,6 @@
-alert();
+
 // richiede all'utente la sua età
-var età = prompt("inserisci la tua età");
+var eta = prompt("inserisci la tua età");
 
 // richiedi all'utente quanti km deve percorrere
 var km = prompt("quanti km devi percorrere");
@@ -13,30 +13,28 @@ var prezzoBiglietto = km * 0.21;
 // applicare sconto del 20% ai minorenni
 var scontoMinorenni = prezzoBiglietto * 20 / 100;
 
+// prezzo del biglietto per utene minorenne
 var prezzoBigliettoMinorenne = prezzoBiglietto - scontoMinorenni;
 
 // applicare sconto del 40% agli over 65
 var scontoOver = prezzoBiglietto * 40 / 100;
 
+// prezzo del biglietto per utene minorenne
 var prezzoBigliettoOver = prezzoBiglietto - scontoOver;
 
-console.log(prezzoBiglietto);
-
-
-
-
-
-
-
-
-
-
+// fascia di età a cui applicare lo sconto
 if (eta >= 65) {
-  alert('sei nella fascia anzianità hai diritto a uno sconto del 40%');
+  console.log(prezzoBigliettoOver);
+  document.getElementById('costo').innerHTML = prezzoBigliettoOver.toFixed(2);
+
 }
 
 else if (eta < 18) {
-  alert('sei maggiorenne hai diritto a uno sconto del 20%');
+  console.log(prezzoBigliettoMinorenne);
+  document.getElementById('costo').innerHTML = prezzoBigliettoMinorenne.toFixed(2);
 }
 
-else
+else {
+  console.log(prezzoBiglietto);
+   document.getElementById('costo').innerHTML = prezzoBiglietto.toFixed(2);
+ }
